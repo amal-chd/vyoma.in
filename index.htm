@@ -6,6 +6,20 @@
 
 	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY95NMHVSM"></script>
+
+<script>
+  fetch('https://notifier-ten.vercel.app/api/notify-visit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      page: window.location.href,
+      device: navigator.userAgent,
+      time: new Date().toLocaleString()
+    })
+  });
+</script>
+
+	
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
